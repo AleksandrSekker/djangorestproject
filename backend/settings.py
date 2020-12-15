@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'c#!8b#5#-)txad6(ojh#s523+-y3!jzh738soymkf6zy8t%&=u'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['djangorestproject.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
