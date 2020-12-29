@@ -19,6 +19,7 @@ def apiOverview(request):
     return Response(api_urls)
 @api_view(['GET'])
 def taskList(request):
+    ''' get task list '''
     task = Task.objects.all()
     serielizer = TaskSerializer(task, many=True)
     return Response(serielizer.data)
@@ -27,7 +28,7 @@ def taskList(request):
 
 @api_view(['POST'])
 def TaskCreate(request):
-    
+    ''' create new task '''
     serializer = TaskSerializer(data=request.data)
     if serializer.is_valid():
         serializer.save()
@@ -35,6 +36,7 @@ def TaskCreate(request):
 
 @api_view(['POST'])
 def TaskUpdate(request, pk):
+    ''' post request to update task'''
     task = Task.objects.get(id=pk)
     serializer = TaskSerializer(instance=task, data=request.data)
     if serializer.is_valid():
@@ -43,6 +45,7 @@ def TaskUpdate(request, pk):
 
 @api_view(['DELETE'])
 def TaskDelete(request, pk):
+    ''' delete request for deleting one item'''
     task = Task.objects.get(id=pk)
     task.delete()
     return Response('Item was delete')

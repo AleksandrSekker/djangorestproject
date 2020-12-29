@@ -53,6 +53,14 @@ INSTALLED_APPS = [
     'drf_yasg',
 ]
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'sekkersan@gmail.com'
+EMAIL_HOST_PASSWORD = 'Alestorm2345'
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',

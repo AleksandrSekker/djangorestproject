@@ -19,6 +19,7 @@ schema_view = get_schema_view(
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('api.urls')),
+    path('contact/', include('contact.urls')),
     path('auth/', include('djoser.urls')),
     path('auth-token/', include('djoser.urls.authtoken')),
     path('swagger(?P<format>\.json|\.yaml)', schema_view.without_ui(cache_timeout=0), name='schema-json'),
